@@ -14,14 +14,14 @@ git clone 网址
 git remote add upstream https://github.com/WinstonMeursault/SDU-ASC26
 ```
 以建立与原项目的连接。
+
+# 二、对项目进行修改
 执行
 ```bash
 git switch -c 你的分支名
 ```
-新建分支（分支名可自己起，如`mybranch`）。
-
-# 二、对项目进行修改
-~~没什么好说的~~
+新建分支（分支名可自己起，如`dev`）。
+~~然后就没什么好说的，修改项目~~
 ~~推荐用[vscode](https://code.visualstudio.com/)，因为我也在用（）~~
 
 # 三、提交修改
@@ -45,12 +45,12 @@ git push origin main
 提交更改。
 # 四、提 Pull Request
 进入 Github 里面自己 Fork 的项目，会发现绿色按钮下面多出了一行字，点击 Contribute 中的 Open Pull Request 即可。
-# 五、回到自己的分支
+# 五、删除自己的分支
 运行
 ```bash
-git switch 你的分支名
+git branch -d 你的分支名（不是 main）
 ```
-回到自己的分支，之后重复第二至五步。
+删除自己的分支，之后重复第二至五步。
 # 参考
 1. [GitHub pull request入门（图解+原理+git命令+可能有用的经验） - 知乎](https://zhuanlan.zhihu.com/p/672447698)
 2. [十分钟学会正确的github工作流，和开源作者们使用同一套流程](https://www.bilibili.com/video/BV19e4y1q7JJ?vd_source=90d8ee5c476dd6c93bfe95eba=aea8302)
