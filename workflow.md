@@ -32,9 +32,10 @@ git fetch upstream main
 更新本地的主分支，然后运行
 ```bash
 git switch main
+git merge upstream/main
 git merge 你的分支名
 ```
-如果没有代码冲突，会提示“Already up to date”。
+如果没有代码冲突，会提示“Already up to date”，否则先解决代码冲突。
 接下来运行
 ```bash
 git add .
@@ -43,14 +44,13 @@ git push origin main
 ```
 提交更改。
 # 四、提 Pull Request
-进入 Github 里面自己 Fork 的项目，会发现绿色按钮下面多出了一行字，点击 Contribute 中的 Open Pull Request即可。
+进入 Github 里面自己 Fork 的项目，会发现绿色按钮下面多出了一行字，点击 Contribute 中的 Open Pull Request 即可。
 # 五、回到自己的分支
 运行
 ```bash
 git switch 你的分支名
 ```
 回到自己的分支，之后重复第二至五步。
-
 # 参考
 1. [GitHub pull request入门（图解+原理+git命令+可能有用的经验） - 知乎](https://zhuanlan.zhihu.com/p/672447698)
 2. [十分钟学会正确的github工作流，和开源作者们使用同一套流程](https://www.bilibili.com/video/BV19e4y1q7JJ?vd_source=90d8ee5c476dd6c93bfe95eba=aea8302)
