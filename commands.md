@@ -73,8 +73,15 @@ vim HPL.dat
 # * 粘贴所得 HPL.dat，保存退出
 # 运行 HPL
 mpirun -np 4 ./xhpl > test.log
+# * 下载 test.log
 
 # 测试 HPCG
+cd ../../../hpcg/build/bin
+vim hpcg.dat
+# * 将第四行修改为 1800
+# 运行 HPCG
+mpirun -np 16 ./xhpcg
+# * 下载输出文件
 ```
 
 # References
