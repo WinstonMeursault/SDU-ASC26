@@ -18,6 +18,10 @@ git remote add upstream https://github.com/WinstonMeursault/SDU-ASC26
 # 二、对项目进行修改
 执行
 ```bash
+git switch main
+git fetch upstream
+git merge upstream/main
+git push origin main
 git switch -c 你的分支名
 ```
 新建分支（分支名可自己起，如`dev`）。
@@ -25,30 +29,30 @@ git switch -c 你的分支名
 ~~推荐用[vscode](https://code.visualstudio.com/)，因为我也在用（）~~
 
 # 三、提交修改
-先运行
-```bash
-git fetch upstream main
-```
-更新本地的主分支，然后运行
-```bash
-git switch main
-git merge upstream/main
-git merge 你的分支名
-```
-如果没有代码冲突，会提示“Already up to date”，否则先解决代码冲突。
-接下来运行
+运行
 ```bash
 git add .
 git commit -m "commit信息，最好把自己的修改大致地写进来"
-git push origin main
+git fetch upstream main
+git rebase upstream/main
+```
+如果有代码冲突，先人工解决掉，再执行上面第二个命令。
+接下来运行
+```bash
+git push origin 你的分支名
 ```
 提交更改。
 # 四、提 Pull Request
-进入 Github 里面自己 Fork 的项目，会发现绿色按钮下面多出了一行字，点击 Contribute 中的 Open Pull Request 即可。
+进入 Github 里面自己 Fork 的项目，会发现绿色按钮下面多出了一行字，点击 Contribute 中的 Open Pull Request ，将自己的分支提交到远程的`main`分支即可。
 # 五、删除自己的分支
-运行
+在 Pull Request 接受后，运行
 ```bash
+git switch main
+git fetch upstream
+git merge upstream/main
+git push origin main
 git branch -d 你的分支名（不是 main）
+git push origin --delete 你的分支名（不是 main）
 ```
 删除自己的分支，之后重复第二至五步。
 # 参考
