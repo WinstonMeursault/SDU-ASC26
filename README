@@ -7,5 +7,4 @@
 |   |   `-- HPCG-Benchmark_3.1_2026-01-27_20-31-33.txt
 |   `-- HPL
 |       `-- test.log
-|-- commands.md     需要执行的命令
-`-- workflow.md     工作流说明
+`-- commands.md     需要执行的命令
