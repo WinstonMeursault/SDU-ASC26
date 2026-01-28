@@ -1,4 +1,5 @@
 # Commands
+
 ```bash
 cd ~
 # 注释的星号(*)后为省略的行为，如 vim 里的操作
@@ -84,5 +85,52 @@ mpirun -np 16 ./xhpcg
 # * 下载输出文件
 ```
 
-# References
+## AMSS-NCKU
+
+### 安装依赖包
+
+#### Update the dependency packages
+
+```bash
+sudo apt-get update
+```
+
+#### Install the Make/Build Tool
+
+```bash
+sudo apt-get install make build-essential
+```
+
+#### Install the CUDA tool
+
+```bash
+sudo apt-get install nvidia-cuda-toolkit
+```
+
+#### Install the MPI  tool
+
+```bash
+sudo apt install openmpi-bin libopenmpi-dev
+```
+
+#### Install Python
+
+```bash
+sudo apt-get install python3 python3-pip
+```
+
+#### Install the OpenCV Tool
+
+```bash
+sudo apt-get install libopencv-dev
+```
+
+#### Install the relevant Python packages
+
+```bash
+pip install numpy scipy matplotlib SymPy opencv-python-full torch
+```
+
+## References
+
 1. [HPL+CBLAS+MPICH的搭建及测试流程-跨栏背心儿-FastEDA](https://www.fasteda.cn/post/163.html)
