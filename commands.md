@@ -1,6 +1,57 @@
 # Commands
 
-## Benchmark
+## 安装Nvidia驱动
+
+### 更新系统
+
+```bash
+sudo apt update
+sudo apt upgrade -y
+```
+
+### 安装必要依赖包
+
+```bash
+sudo apt install build-essential dkms
+sudo apt install linux-headers-$(uname -r)
+```
+
+### 禁用默认Nouveau驱动
+
+编辑文件
+
+```bash
+sudo nano /etc/modprobe.d/blacklist-nouveau.conf
+```
+
+输入
+
+```text
+blacklist nouveau
+options nouveau modeset=0 
+```
+
+更新initramfs并重启
+
+```bash
+sudo update-initramfs -u
+sudo reboot
+```
+
+### 安装Nvidia驱动及CUDA工具包
+
+```bash
+sudo apt install nvidia-driver-525 nvidia-cuda-toolkit
+sudo reboot
+```
+
+### 测试
+
+```bash
+nvidia-smi
+```
+
+## 基准测试
 
 注释的星号(*)后为省略的行为，如 vim 里的操作
 
@@ -123,56 +174,62 @@ mpirun -np 16 ./xhpcg
 
 ## AMSS-NCKU
 
-### Install the dependency packages
+### 配置环境
 
-#### apt-get update
+#### 更新依赖包
 
 ```bash
 sudo apt-get update
 ```
 
-#### Install the Make/Build Tool
+### 安装GCC/GFortran 编译器
+
+```bash
+sudo apt-get install gcc gfortran
+```
+
+#### 安装Make/Build 工具
 
 ```bash
 sudo apt-get install make build-essential
 ```
 
-#### Install the CUDA tool
+#### 安装CUDA 编译器
 
 ```bash
 sudo apt-get install nvidia-cuda-toolkit
 ```
 
-#### Install the MPI  tool
+#### 安装MPI工具
 
 ```bash
 sudo apt install openmpi-bin libopenmpi-dev
 ```
 
-#### Install Python
+#### 安装Python
 
 ```bash
 sudo apt-get install python3 python3-pip
 ```
 
-#### Install the OpenCV Tool
+#### 安装OpenCV工具
 
 ```bash
 sudo apt-get install libopencv-dev python3-opencv
 ```
 
-#### Install the relevant Python packages
+#### 安装Python 的相关包
 
 ```bash
 pip install numpy scipy matplotlib SymPy opencv-python torch
 ```
 
-### Test AMSS-NCKU
+### AMSS-NCKU测试
 
 ```bash
 python3 AMSS_NCKU_program.py
 ```
 
-## References
+## 参考文献
 
 1. [HPL+CBLAS+MPICH的搭建及测试流程-跨栏背心儿-FastEDA](https://www.fasteda.cn/post/163.html)
