@@ -1,4 +1,4 @@
-# SDU-ASC26 | 山东大学（威海）ASC 超算竞赛 2026 某团队项目
+# SDU-ASC26 | 山东大学（威海） ASC26 项目
 
 ## 项目目录说明
 
@@ -6,6 +6,7 @@
 |-- attachments     预赛准备打包提交的文件
 |   |-- HPCG
 |   |-- HPL
+|
 |-- ioFilesLog  输入输出文件记录
 |   |-- HPCG
 |       |-- [01]hpcg.dat    62.9 GB Used Memory
@@ -16,12 +17,19 @@
 |       |-- [02]HPL.dat     AutoGenerate, 128BlockSize
 |       |-- [03]HPL.dat     AutoGenerate, 256BlockSize
 |       |-- [01]test.log
-|-- NR-amssncku AMSS-NCKU 项目
+|
+|-- NR-amssncku AMSS-NCKU 优化项目
 |   |-- amssncku 项目代码和说明文件
 |   |-- AMSS-NCKU-Python Debug in Ubuntu2204.pdf
 |   |-- How to run AMSS-NCKU-Python in Ubuntu2204.pdf
 |   |-- README.md
-|-- LICENSE     许可证
+|
+|-- unitreeWorldModel   Unitree World Model Action 优化项目
+|       |-- ASC26EWMO_source    ASC26测试集
+|       |-- unifolmWorldModelAction
+|       |-- README.md
+|
+|-- LICENSE     开源许可证
 |-- README.md      项目说明
 |-- commands.md     命令执行参考
 |-- ASC26_Preliminary_Round_Notification.pdf     初赛通知
@@ -35,4 +43,5 @@
 
 ### HPCG
 
-- 01 OLD 8.51662GFLOPS
+- 01 OLD 8.51662 GFLOPS
+- 01 59GB Used Memory 26.3280 GFLOPS
