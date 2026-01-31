@@ -69,9 +69,9 @@ mkdir workplace
 #### 安装工具并克隆 HPL HPCG BLAS CBLAS
 
 ```bash
-sudo apt install git vim mpich libmpich-dev
+sudo apt install git vim openmpi-bin openmpi-common libopenmpi-dev
 git clone https://github.com/icl-utk-edu/hpl
-git clone https://gitub.com/hpcg-benchmark/hpcg
+git clone https://github.com/hpcg-benchmark/hpcg
 wget http://www.netlib.org/blas/blas-3.8.0.tgz
 wget http://www.netlib.org/blas/blast-forum/cblas.tgz
 tar -xf blas-3.8.0.tgz
@@ -82,7 +82,7 @@ tar -xf cblas.tgz
 
 ```bash
 cd BLAS-3.8.0
-make
+make -j64
 ar rv libblas.a *.o
 ```
 
@@ -92,13 +92,11 @@ ar rv libblas.a *.o
 cd ../CBLAS
 cp ../BLAS-3.8.0/blas_LINUX.a ./
 cp ./blas_LINUX.a ./lib
-vim Makefile.in
+vim Makefile.in # 将 BLLIB 设置为 ../blas_LINUX.a
 ```
 
-#### * 将 BLLIB 设置为 ../blas_LINUX.a
-
 ```bash
-make
+make -j64
 ./testing/xzcblat1 # 测试  (全 PASS)
 cd ..
 ```
@@ -108,11 +106,11 @@ cd ..
 ```bash
 cd hpl
 cp ./setup/Make.Linux_PII_FBLAS Make.test
-vim Make.in     # * 将 arch 后的 UNKNOWN 修改为 test
-vim Makefile    # * 将 arch 后的 UNKNOWN 修改为 test
+sed -i 's/UNKNOWN/test/g' Make.top
+sed -i 's/UNKNOWN/test/g' Makefile
 
 vim Make.test
-# * 修改 Make.test：
+# 修改 Make.test：
 # ARCH = test
 # （新建） WORKPLACE = /home/admin1/workplace
 # TOPdir = ${WORKPLACE}/hpl
@@ -124,7 +122,7 @@ vim Make.test
 # CC = /usr/bin/mpicc
 # LINKER = /usr/bin/mpif77
 
-make arch=test
+make -j64 arch=test
 ```
 
 #### 安装 HPCG
@@ -133,16 +131,16 @@ make arch=test
 cd ../hpcg/setup
 
 vim Make.Linux_MPI
-# * 修改 Make.Linux_MPI
+# 修改 Make.Linux_MPI
 # 注：同上，MPdir 可以不用管
-# MPinc = -I/usr/include/x86_64-linux-gnu/mpich
+# MPinc = -I/usr/include/x86_64-linux-gnu/mpi
 # MPlib = /usr/lib/x86_64-linux-gnu/libmpi.so
 
 cd ..
 mkdir build
 cd build
 ../configure Linux_MPI
-make
+make -j64
 ```
 
 ### 测试 HPL
@@ -152,25 +150,25 @@ cd ../../hpl/bin/test
 
 # 调整 HPL.dat，通过 https://www.advancedclustering.com/act_kb/tune-hpl-dat-file/ 获得所需的 HPL.dat
 mv HPL.dat HPL.dat.old
-vim HPL.dat     # * 粘贴所得 HPL.dat，保存退出
+vim HPL.dat     # 粘贴所得 HPL.dat，将 device out 项改为 7，保存退出
 
 # 运行 HPL
-mpirun -np 4 ./xhpl > test.log
+mpirun -np 64 ./xhpl > test.log
 ```
 
- 随后下载 test.log
+ 随后下载 HPL.out
 
 ### 测试 HPCG
 
 ```bash
 cd ../../../hpcg/build/bin
-vim hpcg.dat    # * 将第四行修改为 1800
+vim hpcg.dat    # 将第四行修改为 1800
 
 # 运行 HPCG
-mpirun -np 16 ./xhpcg
+mpirun -np 64 ./xhpcg
 ```
 
-随后下载输出文件
+随后下载输出文件 `HPL.out`
 
 ## AMSS-NCKU
 
