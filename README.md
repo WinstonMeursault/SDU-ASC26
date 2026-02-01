@@ -13,11 +13,15 @@
 |       |-- [02]hpcg.dat    117.5 GB Used Memory
 |       |-- [01]HPCG-Benchmark_3.1_2026-01-27_20-31-33.txt
 |   |-- HPL
+|       |-- output_file_note.md     解释输出文件中 T/V 列字符串含义
 |       |-- [01]HPL.dat     Auto-Generated, OLD
 |       |-- [02]HPL.dat     Auto-Generated, 128 BlockSize
-|       |-- [03]HPL.dat     Artificial Modified, 256 BlockSize
+|       |-- [03]HPL.dat     Artificial Modified
+|       |-- [03]参数解释.md  解释 [03]HPL.dat 中参数的设定
 |       |-- [01]HPL.out
 |       |-- [02]HPL.out
+|       |-- [03]HPL.out
+|       |-- [04]HPL.out
 |
 |-- NR-amssncku         AMSS-NCKU 优化项目
 |   |-- amssncku        项目代码和说明文件
@@ -33,6 +37,7 @@
 |-- LICENSE         开源许可证
 |-- README.md       项目说明
 |-- commands.md     命令执行参考
+|-- HPL Algorithm Notes.md      HPL 算法文档注释
 |-- ASC26_Preliminary_Round_Notification.pdf    初赛通知
 ```
 
