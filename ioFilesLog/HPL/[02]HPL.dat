@@ -1,7 +1,7 @@
 HPLinpack benchmark input file
 Innovative Computing Laboratory, University of Tennessee
 HPL.out      output file name (if any) 
-7            device out (6=stdout,7=stderr,file)
+6            device out (6=stdout,7=stderr,file)
 1            # of problems sizes (N)
 115968         Ns
 1            # of NBs

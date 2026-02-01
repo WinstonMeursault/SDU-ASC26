@@ -2,37 +2,38 @@
 
 ## 项目目录说明
 
-```taxt
-|-- attachments     预赛准备打包提交的文件
+```text
+|-- attachments         预赛准备打包提交的文件
 |   |-- HPCG
 |   |-- HPL
 |
-|-- ioFilesLog  输入输出文件记录
+|-- ioFilesLog          输入输出文件记录
 |   |-- HPCG
 |       |-- [01]hpcg.dat    62.9 GB Used Memory
-|       |-- [02]hpcg.dat   117.5 GB Used Memory
+|       |-- [02]hpcg.dat    117.5 GB Used Memory
 |       |-- [01]HPCG-Benchmark_3.1_2026-01-27_20-31-33.txt
 |   |-- HPL
-|       |-- [01]HPL.dat     AutoGenerate, OLD
-|       |-- [02]HPL.dat     AutoGenerate, 128BlockSize
-|       |-- [03]HPL.dat     AutoGenerate, 256BlockSize
-|       |-- [01]test.log
+|       |-- [01]HPL.dat     Auto-Generated, OLD
+|       |-- [02]HPL.dat     Auto-Generated, 128 BlockSize
+|       |-- [03]HPL.dat     Artificial Modified, 256 BlockSize
+|       |-- [01]HPL.out
+|       |-- [02]HPL.out
 |
-|-- NR-amssncku AMSS-NCKU 优化项目
-|   |-- amssncku 项目代码和说明文件
+|-- NR-amssncku         AMSS-NCKU 优化项目
+|   |-- amssncku        项目代码和说明文件
 |   |-- AMSS-NCKU-Python Debug in Ubuntu2204.pdf
 |   |-- How to run AMSS-NCKU-Python in Ubuntu2204.pdf
 |   |-- README.md
 |
-|-- unitreeWorldModel   Unitree World Model Action 优化项目
+|-- unitreeWorldModel           Unitree World Model Action 优化项目
 |       |-- ASC26EWMO_source    ASC26测试集
 |       |-- unifolmWorldModelAction
 |       |-- README.md
 |
-|-- LICENSE     开源许可证
-|-- README.md      项目说明
+|-- LICENSE         开源许可证
+|-- README.md       项目说明
 |-- commands.md     命令执行参考
-|-- ASC26_Preliminary_Round_Notification.pdf     初赛通知
+|-- ASC26_Preliminary_Round_Notification.pdf    初赛通知
 ```
 
 ## 基准测试成果

@@ -56,7 +56,7 @@ $$
 其中，每个数字代表分配的进程，相同的数字代表相同的进程。对于这个示例，$M = N = 16, MB = NB = 2, MP = NP = 2, P = 4$，这种分配方式实现了计算负载和通信开销的平衡。
 参考：[The Two-dimensional Block-Cyclic Distribution](https://netlib.org/scalapack/slug/node75.html)
 
-## Right-Looing Variant —— 右视向量法
+## Right-Looking Variant —— 右视向量法
 同下文的 Crout 和 right-looking，都属于 LU 分解算法，具体内容可参考[Right-Looking Algorithm](https://netlib.org/utk/papers/outofcore/node3.html)
 
 ## Trailing Submatrix —— 剩余子矩阵\*
@@ -65,7 +65,7 @@ $$
 ## Panel —— 平面矩阵组\*
 指原文左图中蓝色部分，而红色部分可在蓝色部分计算完成后直接完成计算，具体可参考[LU Factorization](https://netlib.org/utk/papers/factor/node7.html)
 
-### Cartesion Property —— 笛卡尔坐标系特性\*
+## Cartesion Property —— 笛卡尔坐标系特性\*
 此处指二维循环块分布具有笛卡尔坐标系特性，即进程分配遵循笛卡尔坐标系（平面直角坐标系）。
 
 ## Look-ahead Pipe：前瞻管道\*

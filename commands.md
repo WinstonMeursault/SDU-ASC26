@@ -149,11 +149,12 @@ make -j64
 cd ../../hpl/bin/test
 
 # 调整 HPL.dat，通过 https://www.advancedclustering.com/act_kb/tune-hpl-dat-file/ 获得所需的 HPL.dat
+# 手动调参可参考 https://blog.csdn.net/m0_63203388/article/details/141565296
 mv HPL.dat HPL.dat.old
-vim HPL.dat     # 粘贴所得 HPL.dat，将 device out 项改为 7，保存退出
+vim HPL.dat     # 粘贴所得 HPL.dat，保存退出
 
 # 运行 HPL
-mpirun -np 64 ./xhpl > test.log
+mpirun -np 64 ./xhpl > HPL.out
 ```
 
  随后下载 HPL.out
