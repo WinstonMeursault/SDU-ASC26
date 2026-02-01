@@ -16,7 +16,8 @@
 |       |-- output_file_note.md     解释输出文件中 T/V 列字符串含义
 |       |-- [01]HPL.dat     Auto-Generated, OLD
 |       |-- [02]HPL.dat     Auto-Generated, 128 BlockSize
-|       |-- [03]HPL.dat     Artificial Modified
+|       |-- [03]HPL.dat     Artificially Modified
+|       |-- [04]HPL.dat     Artificially Modified
 |       |-- [03]参数解释.md  解释 [03]HPL.dat 中参数的设定
 |       |-- [01]HPL.out
 |       |-- [02]HPL.out
